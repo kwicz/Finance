@@ -1,4 +1,4 @@
-# financeGame
+# Finance
 All the fun of the stock market, with none of the risk.
 
 # To run
