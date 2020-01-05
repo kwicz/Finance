@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-10 col-xl-9 mx-auto" id="quote">
+            <h1>Sell Stock</h1>
+            <hr>
+            <br>
+            <form action="/sell" method="post">
+                <div class="form-wrapper">
+                    <div class="form-label-group">
+                        <select class="btn-block" name="symbol" id="symbol">
+                                <option disabled selected value="">Your Stocks</option>
+                                {% for stock in stocks %}
+                                <option value="{{ stock.symbol }}">{{ stock.symbol }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input autocomplete="off" autofocus class="form-control" name="shares" id="shares" placeholder="# of shares" type="number" min="0"/>
+                </div>
+                <br>
+                <button class="btn btn-primary btn-block text-uppercase" type="submit">Sell</button>
+            </form>
+            <br>
+          </div>
+        </div>
+    </div>
+{% endblock %}

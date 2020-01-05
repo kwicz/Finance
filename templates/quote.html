@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-10 col-xl-9 mx-auto" id="quote">
+                <h1>Quote</h1>
+                <a href="http://eoddata.com/symbols.aspx" target="_blank">
+                    <p>Look up stock symbols to trade.</p>
+                </a>
+                <hr>
+                <br>
+            <form action="/quote" method="post">
+                <div class="form-label-group">
+                    <input autocomplete="off" autofocus class="form-control" name="symbol" type="text"/>
+                    <label for="inputSymbol">Stock Symbol</label>
+                </div>
+                <button class="btn btn-primary btn-block text-uppercase" type="submit">Get Quote</button>
+            </form>
+            <br>
+          </div>
+        </div>
+    </div>
+{% endblock %}

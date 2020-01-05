@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <h1>Quote</h1>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-10 col-xl-9 mx-auto" id="quote">
+            <br>
+            <p action="/quoted" method="get">
+              A share of {{ name }} ({{ symbol }}) costs {{ price }}.
+            </p>
+            <form action="/buy" method="get">
+                <button class="btn btn-primary btn-block text-uppercase" type="submit">Buy This Stock</button>
+            </form>
+            <br>
+          </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto" id="index">
+          <h1>Trading History</h1>
+          <table class="table table-striped"style="width:100%">
+            <thead>
+              <tr>
+                <th>Sale Type</th>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for sale in sales %}
+              <tr>
+                <td>{{ sale.saletype }}</td>
+                <td>{{ sale.symbol }}</td>
+                <td>{{ sale.shares }}</td>
+                <td>${{ sale.price }}</td>
+                <td>${{ sale.date }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+
+{% endblock %}

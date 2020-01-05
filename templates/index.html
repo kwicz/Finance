@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto" id="index">
+          <h1>Portfolio</h1>
+          <table class="table table-striped"style="width:100%">
+            <thead>
+              <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for stock in stocks %}
+              <tr>
+                <td>{{ stock.symbol }}</td>
+                <td>{{ stock.shares }}</td>
+                <td>{{ stock.price }}</td>
+                <td>{{ stock.total }}</td>
+              </tr>
+              {% endfor %}
+              <tr>
+                <td>Uninvested</td>
+                <td></td>
+                <td></td>
+                <td>{{ cash }}</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Total Assets</td>
+                <td></td>
+                <td></td>
+                <td>{{ grandtotal }}</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+  </div>
+
+{% endblock %}
